@@ -5,10 +5,14 @@ const Record = require('../models/record')
 
 // 首頁
 router.get('/', (req, res) => {
-  Record.find((err, records) => {
-    if (err) return console.err(err)
-    return res.render('index', { records })
-  })
+  /* declare selectedCategory as query of Record.find, if select button is clicked by user new query will be passed into if statement */
+  const selectedCategory = {}
+  if (req.query.category) selectedCategory.category = req.query.category
+  Record.find(selectedCategory)
+    .exec((err, records) => {
+      if (err) return console.err(err)
+      return res.render('index', { records })
+    })
 })
 
 module.exports = router
