@@ -3,7 +3,6 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
-const Record = require('./models/record')
 const methodOverride = require('method-override')
 const exphbs = require('express-handlebars')
 
@@ -17,6 +16,7 @@ db.on('error', () => {
 db.once('open', () => {
   console.log('mongodb connected!')
 })
+const Record = require('./models/record')
 
 
 /* -----middleware setting----- */

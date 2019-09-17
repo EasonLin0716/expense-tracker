@@ -1,2 +1,10 @@
 {{!-- ./views/index.hbs --}}
-<h2>storm, earth and fire, heat my call!</h2>
+<p>類別</p>
+<p>總金額</p>
+<ul>
+  {{#each records}}
+  <li>{{{this.name}}}&nbsp;{{{this.category}}}&nbsp;{{{this.date}}}&nbsp;{{{this.amount}}}&nbsp;<a
+      href="#">修改</a>&nbsp;<a href="#">刪除</a></li>
+  {{/each}}
+</ul>
+<a href="#">新增支出</a>
