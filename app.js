@@ -24,7 +24,12 @@ const bodyParser = require('body-parser')
 app.use(express.static('public'))
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
+const Handlebars = require("handlebars")
+Handlebars.registerHelper('ifEquals', function (arg1, arg2, options) {
+  return (arg1 === arg2) ? options.fn(this) : options.inverse(this);
+})
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(methodOverride('_method'))
 
 
 /* -----route setting----- */

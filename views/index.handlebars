@@ -3,8 +3,9 @@
 <p>總金額</p>
 <ul>
   {{#each records}}
-  <li>{{{this.name}}}&nbsp;{{{this.category}}}&nbsp;{{{this.date}}}&nbsp;{{{this.amount}}}&nbsp;<a
-      href="#">修改</a>&nbsp;<a href="#">刪除</a></li>
+  <li>{{{this.name}}}&nbsp;{{{this.category}}}&nbsp;{{{this.date}}}&nbsp;{{{this.amount}}}&nbsp;
+    <a href="/records/{{{this.id}}}/edit">修改</a>&nbsp;
+    <a href="#">刪除</a></li>
   {{/each}}
 </ul>
 <a href="/records/new">新增支出</a>
