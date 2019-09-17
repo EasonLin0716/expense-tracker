@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Record = require('../record')
+const expenseTrackerJson = require('./expenseTracker')
 
 mongoose.connect('mongodb://localhost/expense-tracker', { useNewUrlParser: true, useUnifiedTopology: true })
 
@@ -11,15 +12,19 @@ db.on('error', () => {
 
 db.once('open', () => {
   console.log('mongodb connected!')
-  for (let i = 0; i < 5; i++) {
-    Record.create(
-      {
-        name: '花費' + i,
-        category: '餐飲食品',
-        date: '2019/9/17',
-        amount: 100
-      }
-    )
-  }
-  console.log('seeder files created.')
+  seedCreate()
 })
+
+
+function seedCreate() {
+  let count = 0
+  expenseTrackerJson.forEach(record => {
+    Record.create(record, () => {
+      count++
+      console.log(`${count}/${expenseTrackerJson.length} done`)
+      if (count === expenseTrackerJson.length) {
+        console.log('All set, Ready to go! (ctrl+c to quit)')
+      }
+    })
+  })
+}
