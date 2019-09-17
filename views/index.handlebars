@@ -5,7 +5,10 @@
   {{#each records}}
   <li>{{{this.name}}}&nbsp;{{{this.category}}}&nbsp;{{{this.date}}}&nbsp;{{{this.amount}}}&nbsp;
     <a href="/records/{{{this.id}}}/edit">修改</a>&nbsp;
-    <a href="#">刪除</a></li>
+    <form action="/records/{{{this.id}}}/?_method=DELETE" method="POST" style="display: inline;">
+      <button type="submit">刪除</button>
+    </form>
+  </li>
   {{/each}}
 </ul>
-<a href="/records/new">新增支出</a>
+<a href="/records/new">新增支出 </a>
