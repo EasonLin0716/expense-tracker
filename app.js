@@ -17,11 +17,14 @@ db.once('open', () => {
   console.log('mongodb connected!')
 })
 const Record = require('./models/record')
+const bodyParser = require('body-parser')
 
 
 /* -----middleware setting----- */
+app.use(express.static('public'))
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
+app.use(bodyParser.urlencoded({ extended: true }))
 
 
 /* -----route setting----- */

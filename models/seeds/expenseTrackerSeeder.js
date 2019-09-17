@@ -14,8 +14,8 @@ db.once('open', () => {
   for (let i = 0; i < 5; i++) {
     Record.create(
       {
-        name: 'expense' + i,
-        category: '交通',
+        name: '花費' + i,
+        category: '餐飲食品',
         date: '2019/9/17',
         amount: 100
       }
