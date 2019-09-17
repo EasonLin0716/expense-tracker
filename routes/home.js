@@ -3,7 +3,7 @@ const router = express.Router()
 
 // 首頁
 router.get('/', (req, res) => {
-  res.send('Index is here')
+  res.render('index')
 })
 
 module.exports = router
