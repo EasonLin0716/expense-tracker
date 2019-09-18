@@ -14,7 +14,7 @@ const flash = require('connect-flash')
 
 
 /* -----db connecting----- */
-mongoose.connect('mongodb://localhost/expense-tracker', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/expense-tracker', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
 const db = mongoose.connection
 db.on('error', () => {
   console.log('mongodb error!')
@@ -60,6 +60,6 @@ app.use('/records', require('./routes/record'))
 app.use('/users', require('./routes/user'))
 app.use('/auth', require('./routes/auths'))
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log('app.js is running')
 })
