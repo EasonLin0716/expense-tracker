@@ -31,7 +31,8 @@ module.exports = passport => {
     new FacebookStrategy({
       clientID: process.env.FACEBOOK_ID,
       clientSecret: process.env.FACEBOOK_SECRET,
-      callbackURL: 'http://localhost:3000/auth/facebook/callback',
+      // change me to https://localhost:3000/auth/facebook/callback whenever you need
+      callbackURL: 'https://frozen-lowlands-58026.herokuapp.com/auth/facebook/callback',
       profileFields: ['email', 'displayName']
     }, (accessToken, refreshToken, profile, done) => {
       User.findOne({
@@ -64,7 +65,7 @@ module.exports = passport => {
     new GoogleStrategy({
       clientID: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,
-      callbackURL: 'http://localhost:3000/auth/google/callback',
+      callbackURL: 'https://frozen-lowlands-58026.herokuapp.com/auth/google/callback',
     },
       (accessToken, refreshToken, profile, done) => {
         console.log(profile._json)
