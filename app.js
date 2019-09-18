@@ -5,6 +5,7 @@ const app = express()
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const exphbs = require('express-handlebars')
+const passport = require('passport')
 
 
 /* -----db connecting----- */
@@ -30,6 +31,13 @@ Handlebars.registerHelper('ifEquals', function (arg1, arg2, options) {
 })
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
+app.use(passport.initialize())
+app.use(passport.session())
+require('./config/passport')(passport)
+app.use((req, res, next) => {
+  res.locals.user = req.user
+  next()
+})
 
 
 /* -----route setting----- */
