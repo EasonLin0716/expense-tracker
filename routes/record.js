@@ -14,6 +14,14 @@ router.get('/new', authenticated, (req, res) => {
 // 新增一筆 Record
 router.post('/', authenticated, (req, res) => {
   console.log(req.body)
+
+  const dateReg = /^((19|20)?[0-9]{2}[- /.](0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01]))*$/
+
+  if (!req.body.name || !req.body.date || !dateReg.test(req.body.date) || !req.body.category || !req.body.amount) {
+    req.flash('warning_msg', '輸入格式有誤，請重新確認')
+    return res.redirect('/records/new')
+  }
+
   const records = new Records({
     name: req.body.name,
     date: req.body.date,
