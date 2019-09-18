@@ -2,6 +2,9 @@
 /* -----require needed middlewares and others----- */
 const express = require('express')
 const app = express()
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const exphbs = require('express-handlebars')
@@ -51,6 +54,7 @@ app.use((req, res, next) => {
 app.use('/', require('./routes/home'))
 app.use('/records', require('./routes/record'))
 app.use('/users', require('./routes/user'))
+app.use('/auth', require('./routes/auths'))
 
 app.listen(3000, () => {
   console.log('app.js is running')
