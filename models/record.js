@@ -20,6 +20,13 @@ const recordSchema = new Schema({
   amount: {
     type: Number,
     required: true
+  },
+
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: 'User', // Define this property is getting from User model
+    index: true, // Set as index for query
+    required: true
   }
 })
 

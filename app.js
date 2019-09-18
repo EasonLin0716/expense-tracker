@@ -10,7 +10,7 @@ const session = require('express-session')
 
 
 /* -----db connecting----- */
-mongoose.connect('mongodb://localhost/expense-tracker', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost/expense-tracker', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
 const db = mongoose.connection
 db.on('error', () => {
   console.log('mongodb error!')

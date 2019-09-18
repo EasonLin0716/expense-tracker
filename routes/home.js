@@ -12,7 +12,8 @@ router.get('/', authenticated, (req, res) => {
   /* declare selectedCategory as query of Record.find, if select button is clicked by user new query will be passed into if statement */
   const selectedCategory = {}
   if (req.query.category) selectedCategory.category = req.query.category
-  Record.find(selectedCategory)
+  Record.find({ userId: req.user._id })
+    .find(selectedCategory)
     .exec((err, records) => {
       let totalAmount = sumAmount(records)
       if (err) return console.err(err)
