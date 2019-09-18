@@ -1,9 +1,10 @@
 {{!-- ./views/index.hbs --}}
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+{{!-- 類別 --}}
+<div class="dropdown text-center my-4" id="dropdown">
+  <button class="btn btn-secondary dropdown-toggle col-8 col-md-6 col-lg-4" type="button" data-toggle="dropdown">
     類別
   </button>
-  <div class="dropdown-menu">
+  <div class="dropdown-menu col-6 col-lg-4 col-md-5">
     <a class="dropdown-item" href="/">全部</a>
     <a class="dropdown-item" href="/?category=家居物業"><i class="fas fa-home"></i>&nbsp;家居物業</a>
     <a class="dropdown-item" href="/?category=交通出行"><i class="fas fa-shuttle-van"></i>&nbsp;交通出行</a>
@@ -12,15 +13,32 @@
     <a class="dropdown-item" href="/?category=其他"><i class="fas fa-pen"></i>&nbsp;其他</a>
   </div>
 </div>
-<p>總金額: {{{totalAmount}}}</p>
-<ul>
-  {{#each records}}
-  <li>{{{this.name}}}&nbsp;{{{this.category}}}&nbsp;{{{this.date}}}&nbsp;{{{this.amount}}}&nbsp;
-    <a href="/records/{{{this.id}}}/edit">修改</a>&nbsp;
-    <form action="/records/{{{this.id}}}/?_method=DELETE" method="POST" style="display: inline;">
-      <button type="submit">刪除</button>
-    </form>
-  </li>
-  {{/each}}
-</ul>
-<a href="/records/new">新增支出 </a>
+
+{{!-- 總金額 --}}
+<div class="d-flex justify-content-center mb-4" id="total-amount">
+  <span>總金額:&nbsp;</span>
+  <h1>{{{totalAmount}}}</h1>
+</div>
+
+<table class="table col-10 mx-auto" id="records">
+  <tbody>
+    {{#each records}}
+    <tr>
+      <th scope="row">{{{this.category}}}</th>
+      <td>
+        <h3>{{{this.name}}}</h3><span>{{{this.date}}}</span>
+      </td>
+      <td id="amount">{{{this.amount}}}</td>
+      <td id="modify">
+        <a class="btn btn-success btn" href="/records/{{{this.id}}}/edit"><i class="fas fa-edit"></i>&nbsp;修改</a>
+        <form action="/records/{{{this.id}}}/?_method=DELETE" method="POST" style="display: inline;">
+          <button class="btn btn-danger btn" type="submit"><i class="fas fa-trash-alt"></i>&nbsp;刪除</button>
+        </form>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+<div class="text-center my-4">
+  <a href="/records/new" class="btn btn-lg btn-warning" id="create">新增支出 </a>
+</div>

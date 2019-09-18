@@ -1,61 +1,61 @@
 [
   {
     "name": "買椅子",
-    "category": "<i class='fas fa-home'></i>家居物業",
+    "category": "<i class='fas fa-home'></i>",
     "date": "2019/09/10",
     "amount": 899
   },
   {
     "name": "汽車加油",
-    "category": "<i class='fas fa-shuttle-van'></i>交通出行",
+    "category": "<i class='fas fa-shuttle-van'></i>",
     "date": "2019/09/11",
     "amount": 1200
   },
   {
     "name": "買萊莎的鍊金工房",
-    "category": "<i class='fas fa-grin-beam'></i>休閒娛樂",
+    "category": "<i class='fas fa-grin-beam'></i>",
     "date": "2019/09/12",
     "amount": 1999
   },
   {
     "name": "買一隻吉娃娃",
-    "category": "<i class='fas fa-utensils'></i>餐飲食品",
+    "category": "<i class='fas fa-utensils'></i>",
     "date": "2019/09/13",
     "amount": 5000
   },
   {
     "name": "老爸的小秘密",
-    "category": "<i class='fas fa-pen'></i>其他",
+    "category": "<i class='fas fa-pen'></i>",
     "date": "2019/09/14",
     "amount": 3000
   },
   {
     "name": "修理電腦",
-    "category": "<i class='fas fa-home'></i>家居物業",
+    "category": "<i class='fas fa-home'></i>",
     "date": "2019/09/14",
     "amount": 1800
   },
   {
     "name": "坐公車",
-    "category": "<i class='fas fa-shuttle-van'></i>交通出行",
+    "category": "<i class='fas fa-shuttle-van'></i>",
     "date": "2019/09/14",
     "amount": 30
   },
   {
     "name": "去正當場所喝酒",
-    "category": "<i class='fas fa-grin-beam'></i>休閒娛樂",
+    "category": "<i class='fas fa-grin-beam'></i>",
     "date": "2019/09/15",
     "amount": 10000
   },
   {
     "name": "買蛋",
-    "category": "<i class='fas fa-utensils'></i>餐飲食品",
+    "category": "<i class='fas fa-utensils'></i>",
     "date": "2019/09/16",
     "amount": 90
   },
   {
     "name": "繳兒子的補習費",
-    "category": "<i class='fas fa-pen'></i>其他",
+    "category": "<i class='fas fa-pen'></i>",
     "date": "2019/09/16",
     "amount": 7900
   }
