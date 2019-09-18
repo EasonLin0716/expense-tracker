@@ -42,3 +42,9 @@ tr:nth-child(odd){
 #create {
   font-size: 36px;
 }
+
+/* new.handlebars */
+#new #title h1 {
+  width:80%;
+  font-size: 48px;
+}
