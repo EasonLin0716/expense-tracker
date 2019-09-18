@@ -1,21 +1,18 @@
 const express = require('express')
 const router = express.Router()
 const Records = require('../models/record')
+const { authenticated } = require('../config/auth')
 
 // 列出全部 Record
-router.get('/', (req, res) => {
+router.get('/', authenticated, (req, res) => {
   res.send('列出所有 Record')
 })
 // 新增一筆 Record 頁面
-router.get('/new', (req, res) => {
+router.get('/new', authenticated, (req, res) => {
   res.render('new')
 })
-// 顯示一筆 Record 的詳細內容
-router.get('/:id', (req, res) => {
-  res.send('顯示 Record 的詳細內容')
-})
 // 新增一筆 Record
-router.post('/', (req, res) => {
+router.post('/', authenticated, (req, res) => {
   console.log(req.body)
   const records = new Records({
     name: req.body.name,
@@ -29,7 +26,7 @@ router.post('/', (req, res) => {
     })
 })
 // 修改 Record 頁面
-router.get('/:id/edit', (req, res) => {
+router.get('/:id/edit', authenticated, (req, res) => {
   console.log(`req.params.id: ${req.params.id}`)
   Records.findById(req.params.id, (err, record) => {
     if (err) return console.err(err)
@@ -37,7 +34,7 @@ router.get('/:id/edit', (req, res) => {
   })
 })
 // 修改 Record
-router.put('/:id', (req, res) => {
+router.put('/:id', authenticated, (req, res) => {
   console.log(`req.params.id: ${req.params.id}`)
   Records.findById(req.params.id, (err, record) => {
     if (err) return console.err(err)
@@ -52,7 +49,7 @@ router.put('/:id', (req, res) => {
   })
 })
 // 刪除 Record
-router.delete('/:id', (req, res) => {
+router.delete('/:id', authenticated, (req, res) => {
   Records.findById(req.params.id, (err, record) => {
     if (err) return console.error(err)
     record.remove(err => {
