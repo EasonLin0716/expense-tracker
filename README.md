@@ -1,8 +1,12 @@
 # Expense-Tracker
 Expense-Tracker (老爸的私房錢) ver1.0
 
-## Features
 A expense tracker for daddys to record their private or secret expenses.
+
+## Features
+1. You can create your own account
+2. You can create, edit and delete your expenses
+3. Use filter button to see your different kind of expenses
 
 ## Preview
 ![Login](https://github.com/EasonLin0716/expense-tracker/blob/master/previews/expense-tracker-1.0-login.JPG)
