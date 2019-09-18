@@ -28,11 +28,12 @@ db.once('open', () => {
         })
       })
 
-      expenseTrackerJson[0]["userId"] = user[0]._id.toString()
-      expenseTrackerJson[1]["userId"] = user[0]._id.toString()
-      expenseTrackerJson[2]["userId"] = user[0]._id.toString()
-      expenseTrackerJson[3]["userId"] = user[0]._id.toString()
-      expenseTrackerJson[4]["userId"] = user[0]._id.toString()
+      for (let i = 0; i < 5; i++) {
+        expenseTrackerJson[i]["userId"] = user[0]._id.toString()
+        console.log(`data ${i + 1}/10 created...`)
+      }
+
+
     })
 
   ).then(() =>
@@ -46,18 +47,19 @@ db.once('open', () => {
         })
       })
 
-      expenseTrackerJson[5]["userId"] = user[0]._id.toString()
-      expenseTrackerJson[6]["userId"] = user[0]._id.toString()
-      expenseTrackerJson[7]["userId"] = user[0]._id.toString()
-      expenseTrackerJson[8]["userId"] = user[0]._id.toString()
-      expenseTrackerJson[9]["userId"] = user[0]._id.toString()
+      for (let i = 5; i < 10; i++) {
+        expenseTrackerJson[i]["userId"] = user[0]._id.toString()
+        console.log(`data ${i + 1}/10 created...`)
+      }
+
     })
 
   ).then(() =>
 
-    Record.create(expenseTrackerJson)
+    Record.create(expenseTrackerJson, () => {
+      console.log('all set, ready to go!')
+    })
 
   )
 
-  console.log('Data create complete!')
 })
