@@ -12,6 +12,7 @@ router.get('/', authenticated, (req, res) => {
   /* declare selectedCategory as query of Record.find, if select button is clicked by user new query will be passed into if statement */
   const selectedCategory = {}
   if (req.query.category) selectedCategory.category = req.query.category
+  console.log(selectedCategory)
   Record.find({ userId: req.user._id })
     .find(selectedCategory)
     .exec((err, records) => {
