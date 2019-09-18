@@ -7,6 +7,7 @@ const methodOverride = require('method-override')
 const exphbs = require('express-handlebars')
 const passport = require('passport')
 const session = require('express-session')
+const bcrypt = require('bcryptjs')
 
 
 /* -----db connecting----- */
