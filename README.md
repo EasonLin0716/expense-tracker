@@ -51,6 +51,14 @@ A expense tracker for daddys to record their private or secret expenses.
    node seeder.js
 ```
 
+or
+
+run this code directly at root
+
+```
+   npm run seeder
+```
+
 6. Congratulations! Now two naive users are available, those are their information:
 
 ```
