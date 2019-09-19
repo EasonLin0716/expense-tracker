@@ -15,7 +15,7 @@ db.on('error', () => {
 
 
 db.once('open', () => {
-  console.log('db connected!')
+  console.log('db connected! Please wait until message "all set, ready to go!" shows. ')
 
   User.create(userJson).then(() =>
 
