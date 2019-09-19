@@ -37,15 +37,16 @@
       <label for="category" class="col-sm-2 col-form-label">種類<span class="text-danger">*</span></label>
       <div class="input-group col-sm-10">
         <select name="category" class="form-control btn btn-secondary dropdown-toggle" href="#" role="button">
-          <option value=''"fas fa-home"'' {{#ifEquals record.category '家居物業' }}selected{{/ifEquals}}>家居物業
+          <option value='"fas fa-home"' {{#ifEquals record.category '"fas fa-home"' }}selected{{/ifEquals}}>家居物業
           </option>
-          <option value='"fas fa-shuttle-van"' {{#ifEquals record.category '交通出行' }}selected{{/ifEquals}}>
+          <option value='"fas fa-shuttle-van"'
+            {{#ifEquals record.category '"fas fa-shuttle-van"' }}selected{{/ifEquals}}>
             交通出行</option>
-          <option value='"fas fa-grin-beam"' {{#ifEquals record.category '休閒娛樂' }}selected{{/ifEquals}}>
+          <option value='"fas fa-grin-beam"' {{#ifEquals record.category '"fas fa-grin-beam"' }}selected{{/ifEquals}}>
             休閒娛樂</option>
-          <option value='"fas fa-utensils"' {{#ifEquals record.category '餐飲食品' }}selected{{/ifEquals}}>
+          <option value='"fas fa-utensils"' {{#ifEquals record.category '"fas fa-utensils"' }}selected{{/ifEquals}}>
             餐飲食品</option>
-          <option value='"fas fa-pen"'>其他</option>
+          <option value='"fas fa-pen"' {{#ifEquals record.category '"fas fa-pen"'}}selected{{/ifEquals}}>其他</option>
         </select>
       </div>
     </div>
