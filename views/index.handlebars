@@ -31,6 +31,12 @@
       <td>
         <h3>{{{this.name}}}</h3><span>{{{this.date}}}</span>
       </td>
+      <td id="merchant">
+        {{#if this.merchant}}
+        <i class="fas fa-store"></i>&nbsp;
+        {{/if}}
+        {{{this.merchant}}}
+      </td>
       <td id="amount">{{{this.amount}}}</td>
       <td id="modify">
         <a class="btn btn-success btn" href="/records/{{{this.id}}}/edit"><i class="fas fa-edit"></i>&nbsp;修改</a>

@@ -24,6 +24,7 @@ router.post('/', authenticated, (req, res) => {
 
   const records = new Records({
     name: req.body.name,
+    merchant: req.body.merchant,
     date: req.body.date,
     category: req.body.category,
     amount: req.body.amount,
@@ -48,6 +49,7 @@ router.put('/:id', authenticated, (req, res) => {
   Records.findOne({ _id: req.params.id, userId: req.user._id }, (err, record) => {
     if (err) return console.err(err)
     record.name = req.body.name
+    record.merchant = req.body.merchant
     record.category = req.body.category
     record.date = req.body.date
     record.amount = req.body.amount
