@@ -15,10 +15,13 @@ router.get('/new', authenticated, (req, res) => {
 router.post('/', authenticated, (req, res) => {
   console.log(req.body)
 
-  const dateReg = /^((19|20)?[0-9]{2}[- /.](0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01]))*$/
+  const dateReg = /^((19|20)?[0-9]{2}[/](0[1-9]|1[012])[/](0[1-9]|[12][0-9]|3[01]))*$/
 
-  if (!req.body.name || !req.body.date || !dateReg.test(req.body.date) || !req.body.category || !req.body.amount) {
-    req.flash('warning_msg', '輸入格式有誤，請重新確認')
+  if (!req.body.name || !req.body.date || !req.body.category || !req.body.amount) {
+    req.flash('warning_msg', '*為必填，請重新確認')
+    return res.redirect('/records/new')
+  } else if (!dateReg.test(req.body.date)) {
+    req.flash('warning_msg', '日期格式錯誤，請輸入 YYYY/MM/DD 或點選日曆以選擇日期')
     return res.redirect('/records/new')
   }
 
