@@ -1,7 +1,12 @@
 # Expense-Tracker
-Expense-Tracker (老爸的私房錢) ver1.0
+Expense-Tracker (老爸的私房錢) ver1.1
 
 A expense tracker for daddys to record their private or secret expenses.
+
+## Updates
+9/19 Users can now filter month and category
+
+9/19 Users can now record merchant when they create or edit expenses
 
 ## Features
 1. You can create your own account
