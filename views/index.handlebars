@@ -27,7 +27,9 @@
   <tbody>
     {{#each records}}
     <tr>
-      <th scope="row">{{{this.category}}}</th>
+      <th scope="row">
+        <i class={{{this.category}}}></i>
+      </th>
       <td>
         <h3>{{{this.name}}}</h3><span>{{{this.date}}}</span>
       </td>
