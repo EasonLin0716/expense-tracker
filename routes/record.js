@@ -34,7 +34,7 @@ router.post('/', authenticated, (req, res) => {
     userId: req.user._id
   })
     .save(err => {
-      if (err) return console.err(err)
+      if (err) return console.error(err)
       res.redirect('/')
     })
 })
@@ -42,7 +42,7 @@ router.post('/', authenticated, (req, res) => {
 router.get('/:id/edit', authenticated, (req, res) => {
   console.log(`req.params.id: ${req.params.id}`)
   Records.findOne({ _id: req.params.id, userId: req.user._id }, (err, record) => {
-    if (err) return console.err(err)
+    if (err) return console.error(err)
     res.render('edit', { record })
   })
 })
@@ -50,14 +50,14 @@ router.get('/:id/edit', authenticated, (req, res) => {
 router.put('/:id', authenticated, (req, res) => {
   console.log(`req.params.id: ${req.params.id}`)
   Records.findOne({ _id: req.params.id, userId: req.user._id }, (err, record) => {
-    if (err) return console.err(err)
+    if (err) return console.error(err)
     record.name = req.body.name
     record.merchant = req.body.merchant
     record.category = req.body.category
     record.date = req.body.date
     record.amount = req.body.amount
     record.save(err => {
-      if (err) return console.err(err)
+      if (err) return console.error(err)
       return res.redirect('/')
     })
   })

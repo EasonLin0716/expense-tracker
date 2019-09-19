@@ -97,8 +97,8 @@
       </td>
       <td id="amount">{{{this.amount}}}</td>
       <td id="modify">
-        <a class="btn btn-success btn btn-block" href="/records/{{{this.id}}}/edit"><i
-            class="fas fa-edit"></i>&nbsp;<span id="edit">修改</span></a>
+        <a class="btn btn-success btn-block" href="/records/{{{this.id}}}/edit"><i class="fas fa-edit"></i>&nbsp;<span
+            id="edit">修改</span></a>
         <form action="/records/{{{this.id}}}/?_method=DELETE" method="POST" style="display: inline;">
           <button onclick="return confirmDelete()" class="btn btn-danger btn btn-block" type="submit">
             <i class="fas fa-trash-alt"></i>&nbsp;<span id="delete">刪除</span>
