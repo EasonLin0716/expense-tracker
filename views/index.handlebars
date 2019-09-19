@@ -2,13 +2,13 @@
 {{!-- 篩選清單/start --}}
 <div class="d-flex justify-content-center">
   {{!-- 月份 --}}
-  <div class="dropdown text-center my-4 col-3" id="dropdown">
+  <div class="dropdown text-center my-4 col-6 col-sm-3" id="dropdown">
     <button class="btn btn-secondary dropdown-toggle col" type="button" data-toggle="dropdown">
       月份
     </button>
     {{!-- if user had chosen category then double filter --}}
     {{#if queryCategory}}
-    <div class="dropdown-menu col-6 col-lg-4 col-md-5">
+    <div class="dropdown-menu">
       <a class="dropdown-item" href="/?category={{queryCategory}}">全部</a>
       <a class="dropdown-item" href='/?month=01&category={{queryCategory}}'>一月</a>
       <a class="dropdown-item" href='/?month=02&category={{queryCategory}}'>二月</a>
@@ -24,7 +24,7 @@
       <a class="dropdown-item" href='/?month=12&category={{queryCategory}}'>十二月</a>
     </div>
     {{else}}
-    <div class="dropdown-menu col-6 col-lg-4 col-md-5">
+    <div class="dropdown-menu">
       <a class="dropdown-item" href="/">全部</a>
       <a class="dropdown-item" href='/?month=01'>一月</a>
       <a class="dropdown-item" href='/?month=02'>二月</a>
@@ -42,11 +42,11 @@
     {{/if}}
   </div>
   {{!-- 類別 --}}
-  <div class="dropdown text-center my-4 col-3" id="dropdown">
+  <div class="dropdown text-center my-4 col-6 col-sm-3" id="dropdown">
     <button class="btn btn-secondary dropdown-toggle col" type="button" data-toggle="dropdown">
       類別
     </button>
-    <div class="dropdown-menu col-6 col-lg-4 col-md-5">
+    <div class="dropdown-menu">
       {{!-- if user had chosen month then double filter --}}
       {{#if queryMonth}}
       <a class="dropdown-item" href="/?month={{queryMonth}}">全部</a>
@@ -83,10 +83,10 @@
   <tbody>
     {{#each records}}
     <tr>
-      <th scope="row">
+      <th scope="row" id="category">
         <i class={{{this.category}}}></i>
       </th>
-      <td>
+      <td id="name-and-date">
         <h3>{{{this.name}}}</h3><span>{{{this.date}}}</span>
       </td>
       <td id="merchant">
@@ -97,9 +97,11 @@
       </td>
       <td id="amount">{{{this.amount}}}</td>
       <td id="modify">
-        <a class="btn btn-success btn" href="/records/{{{this.id}}}/edit"><i class="fas fa-edit"></i>&nbsp;修改</a>
+        <a class="btn btn-success btn" href="/records/{{{this.id}}}/edit"><i class="fas fa-edit"></i>&nbsp;<span
+            id="edit">修改</span></a>
         <form action="/records/{{{this.id}}}/?_method=DELETE" method="POST" style="display: inline;">
-          <button class="btn btn-danger btn" type="submit"><i class="fas fa-trash-alt"></i>&nbsp;刪除</button>
+          <button class="btn btn-danger btn" type="submit"><i class="fas fa-trash-alt"></i>&nbsp;<span
+              id="delete">刪除</span></button>
         </form>
       </td>
     </tr>

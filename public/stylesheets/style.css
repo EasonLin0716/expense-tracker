@@ -6,6 +6,11 @@ tr:nth-child(odd){
 	background-color: rgb(240, 240, 240);
 }
 
+
+#dropdown * {
+  font-size: 24px;
+}
+
 #total-amount span {
   padding-right: 32px;
   font-size: 24px;
@@ -39,10 +44,6 @@ tr:nth-child(odd){
   width: 20%;
 }
 
-#dropdown * {
-  font-size: 24px;
-}
-
 #create {
   font-size: 36px;
 }
@@ -50,4 +51,38 @@ tr:nth-child(odd){
 #new #title h1, #edit #title h1 {
   width:80%;
   font-size: 48px;
+}
+
+@media screen and (max-width:540px) {
+  #total-amount span {
+    padding-right: 20px;
+    font-size: 20px;
+    align-self: center;
+  }
+
+  #total-amount h1 {
+    font-size: 48px;
+  }
+
+  #records #amount, #records #category, #dropdown *, #records #name-and-date h3, #create, #records #category i {
+    font-size: 16px;
+  }
+
+  #records #merchant {
+    display: none;
+  }
+
+  #modify a {
+    margin: 20px 0;
+  }
+
+  #modify i {
+    width: 16px;
+    font-size: 24px;
+  }
+
+  #modify #edit, #modify #delete {
+    display: none;
+  }
+
 }
