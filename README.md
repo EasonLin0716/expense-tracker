@@ -29,7 +29,7 @@ A expense tracker for daddys to record their private or secret expenses.
    
    https://developers.google.com/
 
-3. create a file named `.env` at `\restaurant-list` , get your secret keys and paste the following code: 
+3. create a file named `.env` at `\expense-tracker` , get your secret keys and paste the following code: 
 
 ```
    FACEBOOK_ID = <Your FB ID>
