@@ -15,7 +15,8 @@ router.get('/login', (req, res) => {
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', {
     successRedirect: '/',
-    failureRedirect: '/users/login'
+    failureRedirect: '/users/login',
+    failureFlash: req.flash('warning_msg', `帳號或密碼錯誤，請重新輸入或 <a href="/users/register">按此註冊</a> 一個帳號`)
   })(req, res, next)
 })
 
