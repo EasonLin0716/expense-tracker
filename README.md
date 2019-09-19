@@ -18,7 +18,7 @@ A expense tracker for daddys to record their private or secret expenses.
 ## Preview
 ![Login](https://github.com/EasonLin0716/expense-tracker/blob/master/previews/expense-tracker-1.1-login.JPG)
 ![Cover](https://github.com/EasonLin0716/expense-tracker/blob/master/previews/expense-tracker-1.1-cover.JPG)
-![SMCover](https://https://github.com/EasonLin0716/expense-tracker/blob/master/previews/expense-tracker-1.1-sm-cover.jpg)
+![SMCover](https://github.com/EasonLin0716/expense-tracker/blob/master/previews/expense-tracker-1.1-sm-cover.jpg)
 
 ## Environment set up
 1. Node.js
