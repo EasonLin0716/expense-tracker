@@ -15,14 +15,14 @@ router.get('/', authenticated, (req, res) => {
 
   const selectedCategory = {}
   if (req.query.category) selectedCategory.category = req.query.category
-  if (req.query.month) selectedCategory.date = { $regex: `${req.query.month}` }
+  if (req.query.month) selectedCategory.date = { $regex: `[/]${req.query.month}[/]` }
   console.log(selectedCategory)
   Record.find({ userId: req.user._id })
     .find(selectedCategory)
     .exec((err, records) => {
       let totalAmount = sumAmount(records)
       if (err) return console.err(err)
-      return res.render('index', { records, totalAmount })
+      return res.render('index', { records, totalAmount, queryMonth: req.query.month, queryCategory: req.query.category })
     })
 })
 
