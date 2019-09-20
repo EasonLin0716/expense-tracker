@@ -6,6 +6,18 @@ tr:nth-child(odd){
 	background-color: rgb(240, 240, 240);
 }
 
+/* login */
+
+#login button, #login #facebook, #login #google {
+  font-size: 20px;
+  line-height: 20px;
+}
+
+#register a {
+  font-weight: 800;
+}
+
+/* index */
 
 #dropdown * {
   font-size: 24px;
@@ -49,6 +61,7 @@ tr:nth-child(odd){
   margin: 5px 0;
 }
 
+/* new and edit */
 
 #create {
   font-size: 36px;
@@ -60,6 +73,11 @@ tr:nth-child(odd){
 }
 
 @media screen and (max-width:540px) {  
+
+  h3 {
+    margin: 0;
+  }
+
   #total-amount span {
     padding-right: 20px;
     font-size: 20px;
