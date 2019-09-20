@@ -72,16 +72,39 @@ tr:nth-child(odd){
   font-size: 48px;
 }
 
-@media screen and (max-width:540px) {  
-
+@media screen and (max-width:768px) {
   h3 {
     margin: 0;
   }
 
   #total-amount span {
+    align-self: center;
+  }
+  
+  #total-amount h1 {
+    font-size: 56px;
+  }
+
+  #records #amount, #records #category, #dropdown *, #records #name-and-date h3, #create, #records #category i {
+    font-size: 24px;
+  }
+
+  #modify i {
+    display: none;
+  }
+
+  #records #merchant i {
+    font-size: 20px;
+  }
+
+
+}
+
+@media screen and (max-width:540px) {  
+
+  #total-amount span {
     padding-right: 20px;
     font-size: 20px;
-    align-self: center;
   }
 
   #total-amount h1 {
@@ -90,6 +113,10 @@ tr:nth-child(odd){
 
   #records * {
     padding: 0;
+  }
+
+  #records #category {
+    padding-left: 6px;
   }
 
   #records #amount, #records #category, #dropdown *, #records #name-and-date h3, #create, #records #category i {
@@ -105,8 +132,8 @@ tr:nth-child(odd){
   }
 
   #modify i {
+    display: inline-block;
     font-size: 32px;
-    width: 32px;
   }
 
   #modify #edit, #modify #delete {
