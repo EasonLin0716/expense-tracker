@@ -72,6 +72,11 @@ tr:nth-child(odd){
   font-size: 48px;
 }
 
+#date #datetimepicker4 i {
+  font-size: 24px;
+  color: rgb(160, 160, 160)
+}
+
 @media screen and (max-width:768px) {
   h3 {
     margin: 0;
@@ -95,6 +100,10 @@ tr:nth-child(odd){
 
   #records #merchant i {
     font-size: 20px;
+  }
+
+  #new #title h1, #edit #title h1 {
+    font-size: 36px;
   }
 
 
@@ -138,6 +147,11 @@ tr:nth-child(odd){
 
   #modify #edit, #modify #delete {
     display: none;
+  }
+
+  #new #title h1, #edit #title h1 {
+    font-size: 24px;
+    width: 60%;
   }
 
 }
