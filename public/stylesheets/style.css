@@ -91,7 +91,7 @@ tr:nth-child(odd){
   }
 
   #records #amount, #records #category, #dropdown *, #records #name-and-date h3, #create, #records #category i {
-    font-size: 18px;
+    font-size: 24px;
   }
 
   #modify i {
@@ -99,7 +99,7 @@ tr:nth-child(odd){
   }
 
   #records #merchant i {
-    font-size: 12px;
+    font-size: 20px;
   }
 
   #new #title h1, #edit #title h1 {
