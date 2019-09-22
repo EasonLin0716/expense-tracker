@@ -2,68 +2,68 @@
   {
     "name": "買小凳子給兒子",
     "merchant": "二手商店",
-    "category": "\"fas fa-home\"",
+    "category": "home",
     "date": "2019/09/10",
     "amount": 100
   },
   {
     "name": "幫機車加油",
     "merchant": "加油站",
-    "category": "\"fas fa-shuttle-van\"",
+    "category": "shuttle-van",
     "date": "2019/09/11",
     "amount": 120
   },
   {
     "name": "帶兒子跟老婆去遊樂園",
     "merchant": "六福村",
-    "category": "\"fas fa-grin-beam\"",
+    "category": "grin-beam",
     "date": "2019/09/12",
     "amount": 1000
   },
   {
     "name": "吃陽春麵",
     "merchant": "樓下的小吃店",
-    "category": "\"fas fa-utensils\"",
+    "category": "utensils",
     "date": "2019/09/13",
     "amount": 30
   },
   {
     "name": "買工作要用的視訊設像頭",
     "merchant": "光南大批發",
-    "category": "\"fas fa-pen\"",
+    "category": "pen",
     "date": "2019/09/14",
     "amount": 300
   },
   {
     "name": "買球棒",
     "merchant": "運動用品店",
-    "category": "\"fas fa-home\"",
+    "category": "home",
     "date": "2019/09/14",
     "amount": 800
   },
   {
     "name": "汽車加油",
     "merchant": "中油",
-    "category": "\"fas fa-shuttle-van\"",
+    "category": "shuttle-van",
     "date": "2019/09/14",
     "amount": 1200
   },
   {
     "name": "去正當場所喝酒",
-    "category": "\"fas fa-grin-beam\"",
+    "category": "grin-beam",
     "date": "2019/09/15",
     "amount": 10000
   },
   {
     "name": "買吉娃娃給兒子",
     "merchant": "朋友家",
-    "category": "\"fas fa-utensils\"",
+    "category": "utensils",
     "date": "2019/09/16",
     "amount": 5000
   },
   {
     "name": "老爸的小祕密",
-    "category": "\"fas fa-pen\"",
+    "category": "pen",
     "date": "2019/09/16",
     "amount": 3000
   }

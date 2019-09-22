@@ -50,23 +50,21 @@
       {{!-- if user had chosen month then double filter --}}
       {{#if queryMonth}}
       <a class="dropdown-item" href="/?month={{queryMonth}}">全部</a>
-      <a class="dropdown-item" href='/?month={{queryMonth}}&category="fas fa-home"'><i
-          class="fas fa-home"></i>&nbsp;家居物業</a>
-      <a class="dropdown-item" href='/?month={{queryMonth}}&category="fas fa-shuttle-van"'><i
+      <a class="dropdown-item" href='/?month={{queryMonth}}&category=home'><i class="fas fa-home"></i>&nbsp;家居物業</a>
+      <a class="dropdown-item" href='/?month={{queryMonth}}&category=shuttle-van'><i
           class="fas fa-shuttle-van"></i>&nbsp;交通出行</a>
-      <a class="dropdown-item" href='/?month={{queryMonth}}&category="fas fa-grin-beam"'><i
+      <a class="dropdown-item" href='/?month={{queryMonth}}&category=grin-beam'><i
           class="fas fa-grin-beam"></i>&nbsp;休閒娛樂</a>
-      <a class="dropdown-item" href='/?month={{queryMonth}}&category="fas fa-utensils"'><i
+      <a class="dropdown-item" href='/?month={{queryMonth}}&category=utensils'><i
           class="fas fa-utensils"></i>&nbsp;餐飲食品</a>
-      <a class="dropdown-item" href='/?month={{queryMonth}}&category=" fas fa-pen"'><i
-          class=" fas fa-pen"></i>&nbsp;其他</a>
+      <a class="dropdown-item" href='/?month={{queryMonth}}&category=pen'><i class=" fas fa-pen"></i>&nbsp;其他</a>
       {{else}}
       <a class="dropdown-item" href="/">全部</a>
-      <a class="dropdown-item" href='/?category="fas fa-home"'><i class="fas fa-home"></i>&nbsp;家居物業</a>
-      <a class="dropdown-item" href='/?category="fas fa-shuttle-van"'><i class="fas fa-shuttle-van"></i>&nbsp;交通出行</a>
-      <a class="dropdown-item" href='/?category="fas fa-grin-beam"'><i class="fas fa-grin-beam"></i>&nbsp;休閒娛樂</a>
-      <a class="dropdown-item" href='/?category="fas fa-utensils"'><i class="fas fa-utensils"></i>&nbsp;餐飲食品</a>
-      <a class="dropdown-item" href='/?category=" fas fa-pen"'><i class=" fas fa-pen"></i>&nbsp;其他</a>
+      <a class="dropdown-item" href='/?category=home'><i class="fas fa-home"></i>&nbsp;家居物業</a>
+      <a class="dropdown-item" href='/?category=shuttle-van'><i class="fas fa-shuttle-van"></i>&nbsp;交通出行</a>
+      <a class="dropdown-item" href='/?category=grin-beam'><i class="fas fa-grin-beam"></i>&nbsp;休閒娛樂</a>
+      <a class="dropdown-item" href='/?category=utensils'><i class="fas fa-utensils"></i>&nbsp;餐飲食品</a>
+      <a class="dropdown-item" href='/?category=pen'><i class=" fas fa-pen"></i>&nbsp;其他</a>
       {{/if}}
     </div>
   </div>
@@ -84,7 +82,7 @@
     {{#each records}}
     <tr>
       <th scope="row" id="category">
-        <i class={{{this.category}}}></i>
+        <i class="fas fa-{{{this.category}}}"></i>
       </th>
       <td id="name-and-date">
         <h3>{{{this.name}}}</h3><span>{{{this.date}}}</span>
