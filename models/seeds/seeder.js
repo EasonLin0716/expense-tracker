@@ -15,51 +15,36 @@ db.on('error', () => {
 
 
 db.once('open', () => {
-  console.log('db connected! Please wait until message "all set, ready to go!" shows. ')
 
-  User.create(userJson).then(() =>
-
-    User.find({ email: 'asiagodtone@example.com' }, (err, user) => {
-      bcrypt.genSalt(10, (err, salt) => {
-        bcrypt.hash(user[0].password, salt, (err, hash) => {
-          if (err) throw err
-          user[0].password = hash
-          user[0].save()
+  let promise = new Promise((resolve, reject) => {
+    User.create(userJson, (err, users) => {
+      users.forEach(user => {
+        bcrypt.genSalt(10, (err, salt) => {
+          bcrypt.hash(user.password, salt, (err, hash) => {
+            if (err) throw err
+            user.password = hash
+            user.save()
+          })
         })
       })
-
-      for (let i = 0; i < 5; i++) {
-        expenseTrackerJson[i]["userId"] = user[0]._id.toString()
-        console.log(`data ${i + 1}/10 created...`)
-      }
-
-
+      resolve(users)
     })
+  })
 
-  ).then(() =>
+  promise.then((user) => {
 
-    User.find({ email: 'bigdaddy@example.com' }, (err, user) => {
-      bcrypt.genSalt(10, (err, salt) => {
-        bcrypt.hash(user[0].password, salt, (err, hash) => {
-          if (err) throw err
-          user[0].password = hash
-          user[0].save()
-        })
-      })
+    for (let i = 0; i < 5; i++) {
+      expenseTrackerJson[i]['userId'] = user[0]._id.toString()
+      console.log(`data ${i + 1}/10 created...`)
+    }
 
-      for (let i = 5; i < 10; i++) {
-        expenseTrackerJson[i]["userId"] = user[0]._id.toString()
-        console.log(`data ${i + 1}/10 created...`)
-      }
-
-    })
-
-  ).then(() =>
+    for (let i = 5; i < 10; i++) {
+      expenseTrackerJson[i]["userId"] = user[1]._id.toString()
+      console.log(`data ${i + 1}/10 created...`)
+    }
 
     Record.create(expenseTrackerJson, () => {
       console.log('all set, ready to go!')
     })
-
-  )
-
+  })
 })
