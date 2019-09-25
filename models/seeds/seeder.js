@@ -21,7 +21,7 @@ db.once('open', () => {
       users.forEach(user => {
         bcrypt.genSalt(10, (err, salt) => {
           bcrypt.hash(user.password, salt, (err, hash) => {
-            if (err) throw err
+            if (err) reject(err)
             user.password = hash
             user.save()
           })
@@ -31,20 +31,28 @@ db.once('open', () => {
     })
   })
 
-  promise.then((user) => {
+  importUserId()
 
-    for (let i = 0; i < 5; i++) {
-      expenseTrackerJson[i]['userId'] = user[0]._id.toString()
-      console.log(`data ${i + 1}/10 created...`)
+  async function importUserId() {
+    try {
+      let user = await promise // wait for promise to return value
+
+      for (let i = 0; i < 5; i++) {
+        expenseTrackerJson[i]['userId'] = user[0]._id.toString()
+        console.log(`data ${i + 1}/10 created...`)
+      }
+
+      for (let i = 5; i < 10; i++) {
+        expenseTrackerJson[i]["userId"] = user[1]._id.toString()
+        console.log(`data ${i + 1}/10 created...`)
+      }
+
+      Record.create(expenseTrackerJson, () => {
+        console.log('all set, ready to go!')
+      })
     }
-
-    for (let i = 5; i < 10; i++) {
-      expenseTrackerJson[i]["userId"] = user[1]._id.toString()
-      console.log(`data ${i + 1}/10 created...`)
+    catch {
+      console.log(err)
     }
-
-    Record.create(expenseTrackerJson, () => {
-      console.log('all set, ready to go!')
-    })
-  })
+  }
 })
