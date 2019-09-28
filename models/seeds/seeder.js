@@ -49,6 +49,7 @@ db.once('open', () => {
 
       Record.create(expenseTrackerJson, () => {
         console.log('all set, ready to go!')
+        process.exit()
       })
     }
     catch {
